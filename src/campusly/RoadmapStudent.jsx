@@ -1,6 +1,5 @@
-import studentPhoto from '@/assets/college-student-lms.png.asset.json'
-import studentBack from '@/assets/college-student-back.png.asset.json'
-import { assetUrl } from '@/lib/asset-url'
+import studentPhoto from '@/assets/college-student-front.png'
+import studentBack from '@/assets/college-student-rear.png'
 
 // Photo layers preserve the supplied character while adding a scroll-driven gait.
 export default function RoadmapStudent({ running, direction = 1 }) {
@@ -11,9 +10,9 @@ export default function RoadmapStudent({ running, direction = 1 }) {
       <div className="roadmap-photo-turn">
         {views.map(([view, asset]) => <div key={view} className={`roadmap-photo-view roadmap-photo-${view}`}>
           <div className="roadmap-photo-body">
-            <img className="roadmap-photo-upper" src={assetUrl(asset.url)} alt="" draggable={false} />
-            <img className="roadmap-photo-leg roadmap-photo-leg-left" src={assetUrl(asset.url)} alt="" draggable={false} />
-            <img className="roadmap-photo-leg roadmap-photo-leg-right" src={assetUrl(asset.url)} alt="" draggable={false} />
+            <img className="roadmap-photo-upper" src={asset} alt="" draggable={false} />
+            <img className="roadmap-photo-leg roadmap-photo-leg-left" src={asset} alt="" draggable={false} />
+            <img className="roadmap-photo-leg roadmap-photo-leg-right" src={asset} alt="" draggable={false} />
           </div>
         </div>)}
       </div>

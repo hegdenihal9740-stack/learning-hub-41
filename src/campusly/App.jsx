@@ -798,7 +798,7 @@ function Courses({ data, setPage }) {
     node?.scrollIntoView({ behavior: 'smooth', block: 'center' })
   }
   const scrollToRoadmap = () => {
-    roadmapMapRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    scrollToCurrentRoadmapModule({ root: roadmapMapRef.current, behavior: 'smooth' })
   }
   const selected = mods.find((c) => c.id === openModule)
   const selectedRoadmap = selected ? MODULE_ROADMAP[selected.id] : null
@@ -819,11 +819,11 @@ function Courses({ data, setPage }) {
       window.scrollTo(0, 0)
       return
     }
-    // Open the roadmap at the student's current module, after navigation has settled.
+    // Open the Course tab at the bottom cover, where the road starts.
     let inner = 0
     const outer = window.requestAnimationFrame(() => {
       inner = window.requestAnimationFrame(() => {
-        scrollToCurrentRoadmapModule({ root: roadmapMapRef.current, behavior: 'instant' })
+        window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'instant' })
       })
     })
     return () => {

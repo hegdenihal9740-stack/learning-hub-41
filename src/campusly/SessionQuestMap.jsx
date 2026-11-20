@@ -130,11 +130,11 @@ export default function SessionQuestMap({ moduleId, sessions, completed, moduleS
         <path className="sq-road-shadow" d={layout.fullPath}/>
         <path className="sq-road-edge" d={layout.fullPath}/>
         <path className="sq-road-bed" d={layout.fullPath}/>
-        <path className="sq-road-lane" d={layout.fullPath}/>
         {progressPoint > 0 && (
           <>
             <path className="sq-progress-glow" d={progressPath} pathLength="1000" filter="url(#sq-glow)"/>
             <path className="sq-progress" d={progressPath} pathLength="1000"/>
+            <path className="sq-road-lane" d={progressPath}/>
             <path className="sq-progress-flow" d={progressPath}/>
             {[0, 1.4, 2.8].map((begin) => (
               <circle key={begin} className="sq-comet" r="4.5">

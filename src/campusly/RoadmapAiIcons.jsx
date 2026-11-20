@@ -1,11 +1,10 @@
 // Realistic AI pictures (chip, brain, robot, chart, code, AI core) resting still behind the course road.
-import { assetUrl } from '@/lib/asset-url'
-import chip from '@/assets/roadmap-ai/ai-chip.webp.asset.json'
-import brain from '@/assets/roadmap-ai/ai-brain.webp.asset.json'
-import robot from '@/assets/roadmap-ai/ai-robot.webp.asset.json'
-import dashboard from '@/assets/roadmap-ai/ai-dashboard.webp.asset.json'
-import code from '@/assets/roadmap-ai/ai-code.webp.asset.json'
-import network from '@/assets/roadmap-ai/ai-network.webp.asset.json'
+import chip from '@/assets/roadmap-ai/ai-chip.svg'
+import brain from '@/assets/roadmap-ai/ai-brain.svg'
+import robot from '@/assets/roadmap-ai/ai-robot.svg'
+import dashboard from '@/assets/roadmap-ai/ai-dashboard.svg'
+import code from '@/assets/roadmap-ai/ai-code.svg'
+import network from '@/assets/roadmap-ai/ai-network.svg'
 
 const ICONS = { chip, brain, robot, dashboard, code, network }
 
@@ -36,7 +35,7 @@ export default function RoadmapAiIcons() {
           className={`roadmap-ai-icon is-${side} is-${icon}`}
           style={{ '--ai-y': `${y}%`, '--ai-size': `${size}px` }}
         >
-          <img src={assetUrl(ICONS[icon].url)} alt="" loading="lazy" decoding="async" draggable="false"/>
+          <img src={ICONS[icon]} alt="" loading="lazy" decoding="async" draggable="false"/>
         </span>
       ))}
     </div>
